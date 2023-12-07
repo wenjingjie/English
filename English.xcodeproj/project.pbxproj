@@ -20,7 +20,6 @@
 		37697FD52B220E1900E8026A /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37697FD32B220E1900E8026A /* DetailTableViewCell.xib */; };
 		37D5088E2B22079500979C8B /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D5088C2B22079500979C8B /* MainViewController.m */; };
 		37D5088F2B22079500979C8B /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37D5088D2B22079500979C8B /* MainViewController.xib */; };
-		37D508912B2208A000979C8B /* DATASOURCE in Resources */ = {isa = PBXBuildFile; fileRef = 37D508902B2208A000979C8B /* DATASOURCE */; };
 		5E3B2BA6934B0B9BBDE6AFE7 /* libPods-English.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B3FDF15248B08F761D1137F /* libPods-English.a */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +45,6 @@
 		37D5088B2B22079500979C8B /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		37D5088C2B22079500979C8B /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		37D5088D2B22079500979C8B /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		37D508902B2208A000979C8B /* DATASOURCE */ = {isa = PBXFileReference; lastKnownFileType = text; path = DATASOURCE; sourceTree = "<group>"; };
 		5B3FDF15248B08F761D1137F /* libPods-English.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-English.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC957ADDD1308A57C14E7AB8 /* Pods-English.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-English.debug.xcconfig"; path = "Target Support Files/Pods-English/Pods-English.debug.xcconfig"; sourceTree = "<group>"; };
 		FEDD3F8B4126F6AFD9A8993D /* Pods-English.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-English.release.xcconfig"; path = "Target Support Files/Pods-English/Pods-English.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 			children = (
 				37489C712B22074200279056 /* AppDelegate.h */,
 				37489C722B22074200279056 /* AppDelegate.m */,
-				37D508902B2208A000979C8B /* DATASOURCE */,
 				374A4C212B220ACE004C5D05 /* MainModel.h */,
 				374A4C222B220ACE004C5D05 /* MainModel.m */,
 				374A4C252B220BD8004C5D05 /* Detail */,
@@ -201,7 +198,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37D508912B2208A000979C8B /* DATASOURCE in Resources */,
 				374A4C2A2B220BE3004C5D05 /* DetailViewController.xib in Resources */,
 				37489C812B22074300279056 /* LaunchScreen.storyboard in Resources */,
 				37D5088F2B22079500979C8B /* MainViewController.xib in Resources */,

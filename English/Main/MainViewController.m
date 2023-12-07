@@ -16,10 +16,11 @@
 
 
 #import <MJExtension.h>
+#import <Foundation.h>
 
 @interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic, copy) NSArray<MainModel*> *dataArr;
+@property (nonatomic, strong) NSMutableArray<MainModel*> *dataArr;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -29,17 +30,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.dataArr = @[].mutableCopy;
+
     
+    [LCApplication setApplicationId:@"9ecsHLk6s4l4XCtswcGR0MN3-gzGzoHsz"
+                          clientKey:@"aMv5I6qTiBcjIQjm3RhH38Cd"
+                    serverURLString:@"https://9ecshlk6.lc-cn-n1-shared.com"];
     
+    LCQuery *query = [LCQuery queryWithClassName:@"main"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray<LCObject*> * _Nullable objects, NSError * _Nullable error) {
+        [objects enumerateObjectsUsingBlock:^(LCObject * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            MainModel *model = [MainModel mj_objectWithKeyValues:[obj dictionaryForObject]];
+            [self.dataArr addObject:model];
+        }];
+        [self reload];
+                
+    }];
     
-    NSString *path = [NSBundle.mainBundle pathForResource:@"DATASOURCE" ofType:@""];
-    NSData *data = [NSData dataWithContentsOfFile:path];
-    NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-    self.dataArr = [MainModel mj_objectArrayWithKeyValuesArray:arr ];
-    
-    
-    
-    
+}
+
+-(void)reload{
     self.tableView.dataSource=self;
     self.tableView.delegate=self;
     
@@ -48,9 +58,9 @@
     UINib *nib=    [UINib nibWithNibName:identifier bundle:NSBundle.mainBundle];
     [self.tableView registerNib:nib forCellReuseIdentifier:identifier];
     
-    [self.tableView reloadData];
-    
     self.tableView.rowHeight = 80;
+    
+    [self.tableView reloadData];
     
     
 }
