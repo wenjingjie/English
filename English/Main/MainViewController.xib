@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController">
             <connections>
+                <outlet property="tableView" destination="7Bz-lV-Z6g" id="VRI-I9-iZB"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,13 +19,19 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B3L-c4-XZ2">
-                    <rect key="frame" x="155" y="185" width="49" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </switch>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7Bz-lV-Z6g">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="7Bz-lV-Z6g" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="DZf-Hl-fvl"/>
+                <constraint firstItem="7Bz-lV-Z6g" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="MWP-HC-Ff7"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="7Bz-lV-Z6g" secondAttribute="trailing" id="XZH-jn-j2o"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="7Bz-lV-Z6g" secondAttribute="bottom" id="tia-Q4-SWB"/>
+            </constraints>
             <point key="canvasLocation" x="131" y="-11"/>
         </view>
     </objects>
