@@ -11,6 +11,9 @@
 
 #import "MainTableViewCell.h"
 
+
+#import "DetailViewController.h"
+
 @interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, copy) NSArray *dataArr;
@@ -75,6 +78,20 @@
     cell.label.text = model.date;
     
     return cell;
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DetailViewController *detail = DetailViewController.new;
+    
+    
+    MainModel *model = self.dataArr[indexPath.row];
+    detail.model = model;
+    
+    
+    
+    [self.navigationController pushViewController:detail animated:YES];
 }
 
 
