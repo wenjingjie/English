@@ -12,6 +12,8 @@
 
 #import "DetailTableViewCell.h"
 
+#import <AVFoundation/AVFoundation.h>
+
 @interface DetailViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic, copy) NSArray<MainDataModel*> *dataArr;
@@ -64,9 +66,36 @@
     return cell;
 }
 
+
+AVSpeechSynthesizer *synthesizer ;
+AVSpeechUtterance *utterance ;
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MainDataModel *model = self.dataArr[indexPath.row];
+    
+    
+    // 创建 AVSpeechSynthesizer
+    synthesizer = [[AVSpeechSynthesizer alloc] init];
+    // 创建 AVSpeechUtterance
+    utterance = [[AVSpeechUtterance alloc] initWithString:model.text];
+    utterance.rate = .4;
+
+    
+    NSMutableArray<AVSpeechSynthesisVoice *> *  m = @[].mutableCopy;
+    NSArray<AVSpeechSynthesisVoice *> *  speechVoices = AVSpeechSynthesisVoice.speechVoices;
+    [speechVoices enumerateObjectsUsingBlock:^(AVSpeechSynthesisVoice * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj.language isEqualToString:@"en-US"] && obj.gender == AVSpeechSynthesisVoiceGenderFemale ) {
+            [m addObject:obj];
+        }
+    }];
+    AVSpeechSynthesisVoice*voice = m[arc4random()%m.count];
+//    utterance.voice = voice;
+    
+
+    
+    utterance.voice;
+    // 播放合成语音
+    [synthesizer speakUtterance:utterance];
 }
 
 @end
