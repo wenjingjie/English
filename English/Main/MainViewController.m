@@ -43,6 +43,15 @@
             MainModel *model = [MainModel mj_objectWithKeyValues:[obj dictionaryForObject]];
             [self.dataArr addObject:model];
         }];
+        
+        
+        NSDateFormatter *formatter = NSDateFormatter.new;
+        formatter.dateFormat = @"yyyy-MM-dd";
+[        self.dataArr sortUsingComparator:^NSComparisonResult(MainModel * obj1, MainModel * obj2) {
+    NSDate *d1 = [formatter dateFromString:obj1.date];
+    NSDate *d2 = [formatter dateFromString:obj2.date];
+    return d1.timeIntervalSince1970<d2.timeIntervalSince1970;
+        }];
         [self reload];
                 
     }];
