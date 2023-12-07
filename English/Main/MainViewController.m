@@ -14,9 +14,12 @@
 
 #import "DetailViewController.h"
 
+
+#import <MJExtension.h>
+
 @interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>
 
-@property (nonatomic, copy) NSArray *dataArr;
+@property (nonatomic, copy) NSArray<MainModel*> *dataArr;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -32,17 +35,7 @@
     NSString *path = [NSBundle.mainBundle pathForResource:@"DATASOURCE" ofType:@""];
     NSData *data = [NSData dataWithContentsOfFile:path];
     NSArray *arr = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-    [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        MainModel *model = MainModel.new;
-        model.date = obj[@"date"];
-        if ([self.dataArr isKindOfClass:NSArray.class]) {
-            self.dataArr=            [self.dataArr arrayByAddingObject:model];
-        } else{
-            self.dataArr = @[model];
-        }
-    }];
-    
-    
+    self.dataArr = [MainModel mj_objectArrayWithKeyValuesArray:arr ];
     
     
     
