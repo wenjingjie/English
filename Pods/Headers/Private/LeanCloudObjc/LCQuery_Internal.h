@@ -1,0 +1,1 @@
+../../../LeanCloudObjc/AVOS/Sources/Foundation/Query/LCQuery_Internal.h

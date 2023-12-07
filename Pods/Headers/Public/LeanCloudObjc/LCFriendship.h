@@ -1,0 +1,1 @@
+../../../LeanCloudObjc/AVOS/Sources/Foundation/User/LCFriendship.h

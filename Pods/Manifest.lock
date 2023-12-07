@@ -1,16 +1,20 @@
 PODS:
+  - LeanCloudObjc/Foundation (13.9.0)
   - MJExtension (3.4.1)
 
 DEPENDENCIES:
+  - LeanCloudObjc/Foundation
   - MJExtension
 
 SPEC REPOS:
   trunk:
+    - LeanCloudObjc
     - MJExtension
 
 SPEC CHECKSUMS:
+  LeanCloudObjc: e74f2eb6892ddf336c397b24a4619566da34bcd6
   MJExtension: 21c5f6f8c4d5d8844b7ae8fbae08fed0b501f961
 
-PODFILE CHECKSUM: 5f3d5991ed8cc08d632aa4c36db0cb02cab44c17
+PODFILE CHECKSUM: bdd44896420e4ac81a402e5c1bd7d8b8c29a7644
 
 COCOAPODS: 1.14.3

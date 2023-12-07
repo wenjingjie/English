@@ -5,4 +5,5 @@ target 'English' do
 
 platform :ios, '11.0'
   pod 'MJExtension'
+  pod 'LeanCloudObjc/Foundation'
 end

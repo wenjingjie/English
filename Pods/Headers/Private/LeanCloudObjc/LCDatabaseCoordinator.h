@@ -1,0 +1,1 @@
+../../../LeanCloudObjc/AVOS/Sources/Foundation/Utils/LCDatabaseCoordinator.h
