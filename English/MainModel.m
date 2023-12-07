@@ -7,6 +7,21 @@
 
 #import "MainModel.h"
 
+#import <MJExtension.h>
+
 @implementation MainModel
+
+
++(NSDictionary *)mj_objectClassInArray
+{
+    return @{
+        @"data":MainDataModel.class,
+    };
+}
+
+
+@end
+
+@implementation MainDataModel
 
 @end
