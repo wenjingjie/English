@@ -78,7 +78,7 @@ AVSpeechUtterance *utterance ;
     synthesizer = [[AVSpeechSynthesizer alloc] init];
     // 创建 AVSpeechUtterance
     utterance = [[AVSpeechUtterance alloc] initWithString:model.text];
-    utterance.rate = .4;
+    utterance.rate = .35;
 
     
     NSMutableArray<AVSpeechSynthesisVoice *> *  m = @[].mutableCopy;
